@@ -48,38 +48,38 @@ public class CheckerboardFXMLController implements Initializable, Startable {
         gridBtn1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent t) {
                 changeGrid(16,16);
-                recreateBoard();
+                createBoard();
             }
         });
         gridBtn2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent t) {
                 changeGrid(10,10);
-                recreateBoard();
+                createBoard();
             }
         });
         gridBtn3.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent t) {
                 changeGrid(8,8);
-                recreateBoard();
+                createBoard();
             }
         });
         gridBtn4.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent t) {
                 changeGrid(3,3);
-                recreateBoard();
+                createBoard();
             }
         });
         
         colorBtn1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent t) {
                 changeColor(Color.RED, Color.BLACK);
-                recreateBoard();
+                createBoard();
             }
         });
         colorBtn2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent t) {
                 changeColor(Color.SKYBLUE, Color.DARKBLUE);
-                recreateBoard();
+                createBoard();
             }
         });
     }    
@@ -90,27 +90,20 @@ public class CheckerboardFXMLController implements Initializable, Startable {
         this.stage = stage;
                 
         //create initial board
-        this.board = new Checkerboard(this.numCols, this.numRows, this.stage.getScene().getWidth(), this.stage.getScene().getHeight() - this.bar.getHeight());
-        rootBox.getChildren().add(this.board.build());
+        createBoard();
         
-        
-        ChangeListener<Number> lambdaChangeListender = new ChangeListener<Number> (
-        {
-            recreateBoard();
-        });
         //check for any window resizing and recreate the board if changes are detected
-        this.stage.getScene().widthProperty().addListener((a, b, c) -> {
-            recreateBoard();    
-        });
-        
-        this.stage.getScene().heightProperty().addListener((a, b, c) -> {
-            recreateBoard();
-        });
+        ChangeListener<Number> lambdaChangeListener = (a,b,c) ->
+        {
+            createBoard();
+        };
+        this.stage.getScene().widthProperty().addListener(lambdaChangeListener);
+        this.stage.getScene().heightProperty().addListener(lambdaChangeListener);
     }
     
-    private void recreateBoard()
+    private void createBoard()
     {
-        rootBox.getChildren().remove(this.board.getBoard());
+        if(this.board != null){ rootBox.getChildren().remove(this.board.getBoard());} //only remove existing board if existing board exists
         this.board = new Checkerboard(this.numCols, this.numRows, this.stage.getScene().getWidth(), this.stage.getScene().getHeight() - this.bar.getHeight(), this.lightColor, this.darkColor);
         rootBox.getChildren().add(this.board.build());
     }
