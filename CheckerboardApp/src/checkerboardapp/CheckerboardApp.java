@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Conno
+ * @author Connor Penrod
  */
 public class CheckerboardApp extends Application {
     

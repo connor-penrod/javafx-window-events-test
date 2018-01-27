@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Conno
+ * @author Connor Penrod
  */
 public class CheckerboardFXMLController implements Initializable, Startable {
     
@@ -45,6 +45,10 @@ public class CheckerboardFXMLController implements Initializable, Startable {
         this.lightColor = Color.RED;
         this.darkColor = Color.BLACK;
         
+        EventHandler<ActionEvent> updateBoard = (a) -> {
+            changeGrid(16,16);
+            createBoard();
+        };
         gridBtn1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent t) {
                 changeGrid(16,16);
