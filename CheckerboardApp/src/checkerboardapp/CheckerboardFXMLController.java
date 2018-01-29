@@ -45,46 +45,30 @@ public class CheckerboardFXMLController implements Initializable, Startable {
         this.lightColor = Color.RED;
         this.darkColor = Color.BLACK;
         
-        EventHandler<ActionEvent> updateBoard = (a) -> {
+        gridBtn1.setOnAction((a) -> {
             changeGrid(16,16);
             createBoard();
-        };
-        gridBtn1.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent t) {
-                changeGrid(16,16);
-                createBoard();
-            }
         });
-        gridBtn2.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent t) {
-                changeGrid(10,10);
-                createBoard();
-            }
+        gridBtn2.setOnAction((a) -> {
+            changeGrid(10,10);
+            createBoard();
         });
-        gridBtn3.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent t) {
-                changeGrid(8,8);
-                createBoard();
-            }
+        gridBtn3.setOnAction((a) -> {
+            changeGrid(8,8);
+            createBoard();
         });
-        gridBtn4.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent t) {
-                changeGrid(3,3);
-                createBoard();
-            }
+        gridBtn4.setOnAction((a) -> {
+            changeGrid(3,3);
+            createBoard();
         });
         
-        colorBtn1.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent t) {
-                changeColor(Color.RED, Color.BLACK);
-                createBoard();
-            }
+        colorBtn1.setOnAction((a) -> {
+            changeColor(Color.RED, Color.BLACK);
+            createBoard();
         });
-        colorBtn2.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent t) {
-                changeColor(Color.SKYBLUE, Color.DARKBLUE);
-                createBoard();
-            }
+        colorBtn2.setOnAction((a) -> {
+            changeColor(Color.SKYBLUE, Color.DARKBLUE);
+            createBoard();
         });
     }    
     
