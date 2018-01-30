@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package checkerboardapp;
 
 import javafx.scene.layout.AnchorPane;
@@ -13,6 +9,8 @@ import javafx.scene.shape.Rectangle;
  *s
  * @author Connor Penrod
  */
+
+//this object creates a checkerboard made of an AnchorPane with Rectangle children
 public class Checkerboard {
     private AnchorPane pane;    
     private int numRows, numCols;
@@ -40,6 +38,7 @@ public class Checkerboard {
         this(numRows, numCols, boardWidth, boardHeight, Color.RED, Color.BLACK);
     }
     
+    //returns the anchorpane reference
     public AnchorPane build()
     {
         populate(this.pane); 

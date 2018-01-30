@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package checkerboardapp;
 
 import java.net.URL;
@@ -45,6 +41,7 @@ public class CheckerboardFXMLController implements Initializable, Startable {
         this.lightColor = Color.RED;
         this.darkColor = Color.BLACK;
         
+        //event handling for menu buttons
         gridBtn1.setOnAction((a) -> {
             changeGrid(16,16);
             createBoard();
