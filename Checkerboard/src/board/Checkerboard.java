@@ -1,5 +1,5 @@
 
-package checkerboardapp;
+package board;
 
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
@@ -12,7 +12,7 @@ import javafx.scene.shape.Rectangle;
 
 //this object creates a checkerboard made of an AnchorPane with Rectangle children
 public class Checkerboard {
-    private AnchorPane pane;    
+    private AnchorPane pane;
     private int numRows, numCols;
     private double boardWidth, boardHeight, rectWidth, rectHeight;
     private Color lightColor, darkColor;
@@ -75,11 +75,11 @@ public class Checkerboard {
     }
     
     int getNumRows() {return this.numRows;}
-    int getNumCols() {return this.numCols;} 
-    double getWidth() {return this.boardWidth;} 
-    double getHeight() {return this.boardHeight;} 
+    int getNumCols() {return this.numCols;}
+    double getWidth() {return this.boardWidth;}
+    double getHeight() {return this.boardHeight;}
     Color getLightColor() {return this.lightColor;} 
-    Color getDarkColor() {return this.darkColor;} 
+    Color getDarkColor() {return this.darkColor;}
     double getRectangleWidth() {return this.rectWidth;} 
     double getRectangleHeight() {return this.rectHeight;}
 }

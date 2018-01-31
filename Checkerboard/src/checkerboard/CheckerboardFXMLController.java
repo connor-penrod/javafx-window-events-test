@@ -1,6 +1,7 @@
 
-package checkerboardapp;
+package checkerboard;
 
+import board.Checkerboard;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
@@ -88,7 +89,10 @@ public class CheckerboardFXMLController implements Initializable, Startable {
     
     private void createBoard()
     {
-        if(this.board != null){ rootBox.getChildren().remove(this.board.getBoard());} //only remove existing board if existing board exists
+        if(this.board != null)
+        { 
+            rootBox.getChildren().remove(this.board.getBoard());
+        } //only remove existing board if existing board exists
         this.board = new Checkerboard(this.numCols, this.numRows, this.stage.getScene().getWidth(), this.stage.getScene().getHeight() - this.bar.getHeight(), this.lightColor, this.darkColor);
         rootBox.getChildren().add(this.board.build());
     }

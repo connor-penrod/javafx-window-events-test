@@ -1,5 +1,5 @@
 
-package checkerboardapp;
+package checkerboard;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +11,7 @@ import javafx.stage.Stage;
  *
  * @author Connor Penrod
  */
-public class CheckerboardApp extends Application {
+public class Checkerboard extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
